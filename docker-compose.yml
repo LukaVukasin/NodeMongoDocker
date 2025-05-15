@@ -1,7 +1,6 @@
-version: '3.7'
+version: "3.7"
 
 services:
-
   node:
     container_name: nodeapp
     image: nodeapp
@@ -19,12 +18,12 @@ services:
     environment:
       - NODE_ENV=production
       - APP_VERSION=1.0
-    depends_on: 
+    depends_on:
       - mongodb
-      
+
   mongodb:
     container_name: mongodb
-    image: mongo
+    image: mongo:4.4
     networks:
       - nodeapp-network
 
